@@ -1,41 +1,38 @@
 import './App.css';
 import {PropTypes} from 'prop-types';
 import Info from './info';
+import { useState} from 'react';
 
 function App() {
   return (
     <div className="App">
       <p>Bare bones app</p>
       <Info/>
-      <AddItem text="Pat" number={1}/>
-      <AddItem text="Angela" number={2}/>
-      <AddItem text="Camila" number={3}/>
-
+      <ButtonState/>
     </div>  
   );
 }
 
+function ButtonState() {
+  const [title, setTitle] = useState("");
+  const [count, setCount] = useState(0);
 
+  const updateTitleClicked = () => {
+    setTitle("Now we have a title!");
+  }
 
-function AddItem({text, number = 4}) {
-  const value = text;
+  const updateCounterClicked = () => {
+    setCount(count + 1);
+  }
 
   return (
-    <form>
-      <label for='text-form'>Type something: </label>
-      <input type='text' placeholder={value} id='text-form'/>
-      <p>{number}</p>
-    </form>
+    <div>
+      <p>Title: {title} </p>
+      <p>Counter: {count} </p>
+      <button onClick={updateTitleClicked}>Update Title</button>
+      <button onClick={updateCounterClicked}>Update Counter</button>
+    </div>
   )
-}
-AddItem.defaultProps = {
-  text : "noname",
-  number : 0
-};
-
-AddItem.propTypes = {
-  number : PropTypes.number,
-  text : PropTypes.string,
 }
 
 export default App;
