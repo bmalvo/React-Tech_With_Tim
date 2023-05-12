@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from './App.module.css';
 
 function AddItem(props) {
 
@@ -18,7 +19,7 @@ function AddItem(props) {
 
     return (
         <div>
-            <h2>Add a Item</h2>
+            <h2 className= {styles.blue}>Add a Item</h2>
             <form>
             <label htmlFor="name-field">Name: </label>
             <input id="name-field" type="text" value={name} 

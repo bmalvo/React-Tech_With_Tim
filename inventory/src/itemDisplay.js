@@ -8,7 +8,6 @@ function ItemsDisplay(props) {
             <p>Price: {item.price}</p>
             <p>Type: {item.type}</p>
             <p>Brand: {item.brand}</p>
-
                                     </div>
         }) }
       </div>

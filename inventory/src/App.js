@@ -1,8 +1,14 @@
 import { useState } from 'react';
-import './App.css';
+// import './App.css';
 import SearchBar from './searchBar';
 import AddItem from './addItem';
 import ItemsDisplay from './itemDisplay';
+// import styled from "styled-components";
+
+// const Title = styled.h1 `
+//   color: blue;
+// `
+
 
 function App() {
   const [filters, setFilters] = useState({});
@@ -22,6 +28,7 @@ function App() {
 
   return (
     <div className="App">
+      <p className='blue'>Test paragraph</p>
     <SearchBar updateSearchParams = { updateFilters } />   
     <ItemsDisplay items= {data["items"]} />
     <AddItem addItem= { addItemToData } />       

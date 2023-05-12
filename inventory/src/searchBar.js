@@ -14,7 +14,7 @@ function SearchBar(props) {
 
     return (
         <div>
-            <h2>Search for an Item</h2>
+            <h2 className="red">Search for an Item</h2>
             <form>
             <label htmlFor="name-field">Name: </label>
             <input id="name-field" type="text" value={name} 
