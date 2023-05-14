@@ -1,13 +1,14 @@
+import React from 'react';
 import { useState } from 'react';
 // import './App.css';
 import SearchBar from './searchBar';
 import AddItem from './addItem';
 import ItemsDisplay from './itemDisplay';
-// import styled from "styled-components";
+import styled from "styled-components";
 
-// const Title = styled.h1 `
-//   color: blue;
-// `
+const Title = styled.h1 `
+  color: ${props => props.color ? props.color : 'black'};
+`
 
 
 function App() {
@@ -28,10 +29,16 @@ function App() {
 
   return (
     <div className="App">
-      <p className='blue'>Test paragraph</p>
+      <Title color='green'>Testing paragraph</Title>
     <SearchBar updateSearchParams = { updateFilters } />   
     <ItemsDisplay items= {data["items"]} />
+    <div style={{
+      border: '1px solid black',
+      marginTop: '10px',
+      padding: '5px',
+    }}>
     <AddItem addItem= { addItemToData } />       
+    </div>
     </div>  
   );
 }
