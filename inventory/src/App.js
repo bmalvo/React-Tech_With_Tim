@@ -28,15 +28,15 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="container">
       <Title color='green'>Testing paragraph</Title>
-    <SearchBar updateSearchParams = { updateFilters } />   
+    <div className='row mt-3'>
     <ItemsDisplay items= {data["items"]} />
-    <div style={{
-      border: '1px solid black',
-      marginTop: '10px',
-      padding: '5px',
-    }}>
+    </div>
+    <div className='row mt-3'>
+    <SearchBar updateSearchParams = { updateFilters } />   
+    </div>
+    <div className='row mt-3'>
     <AddItem addItem= { addItemToData } />       
     </div>
     </div>  
