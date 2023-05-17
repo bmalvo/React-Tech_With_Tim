@@ -10,7 +10,10 @@ function SearchBar(props) {
 
     const searchButtonPressed = () => {
         props.updateSearchParams({
-            name: name, price: price, type: type, brand: brand});
+            name: name, 
+            price: price, 
+            type: type, 
+            brand: brand});
     };
 
     return (

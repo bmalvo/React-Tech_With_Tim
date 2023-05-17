@@ -27,11 +27,23 @@ function App() {
     console.log(data); 
   }
 
+  const filterData = (data) => {
+    const filteredData = [];
+
+    for (const item of data) {
+        if (filters.name !== "" && item.name !== filters.name) {
+          continue;
+        }
+    }
+
+    return filteredData;
+  } 
+
   return (
     <div className="container">
       <Title color='green'>Testing paragraph</Title>
     <div className='row mt-3'>
-    <ItemsDisplay items= {data["items"]} />
+    <ItemsDisplay items= {filteredData(data["items"])} />
     </div>
     <div className='row mt-3'>
     <SearchBar updateSearchParams = { updateFilters } />   
