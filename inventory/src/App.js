@@ -22,6 +22,12 @@ function App() {
   const addItemToData = (item) => {
     let items = data['items'];
     item.id = items.length;
+    
+    const requestOptions = {
+      method: "POST"
+    }
+    fetch("http://localhost:3000/items", requestOptions);
+    
     items.push(item);
     setData({items: items});
     console.log(data); 
@@ -51,7 +57,7 @@ function App() {
           continue;
         }
 
-        filteredData.push(item);
+        filterData.push(item);
     }
 
     return filteredData;
