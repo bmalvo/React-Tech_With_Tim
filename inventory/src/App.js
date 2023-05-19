@@ -21,16 +21,23 @@ function App() {
 
   const addItemToData = (item) => {
     let items = data['items'];
-    item.id = items.length;
+    // item.id = items.length+1;
     
     const requestOptions = {
-      method: "POST"
-    }
-    fetch("http://localhost:3000/items", requestOptions);
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(item),
+    };
+    fetch("http://localhost:3000/items", requestOptions)
+    .then((response) => response.json())
+    .then((data) => { items.push(data);
+      setData({items: items}); });
     
-    items.push(item);
-    setData({items: items});
-    console.log(data); 
+    // items.push(item);
+    // setData({items: items});
+    // console.log(data); 
   }
 
   const filterData = (data) => {
