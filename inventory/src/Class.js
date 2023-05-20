@@ -8,9 +8,22 @@ export default class Test extends React.Component {
         };
     }
 
+    componentDidMount() {
+        console.log("mounted!");
+    }
+
+    componentDidUpdate () {
+        console.log('updated!')
+    }
+
+    componentWillUnmount() {
+        console.log('cleanup')
+    }
+
     clickedButton() {
         this.setState({count: this.state.count +1});
         console.log("clicked!");
+        this.props.destroy(false);
     }
 
     render () {
