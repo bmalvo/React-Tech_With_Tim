@@ -1,11 +1,11 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // import './App.css';
 import SearchBar from './searchBar';
 import AddItem from './addItem';
 import ItemsDisplay from './itemDisplay';
 import styled from "styled-components";
-import Test from './Class';
+// import Test from './Class';
 
 const Title = styled.h1 `
   color: ${props => props.color ? props.color : 'black'};
@@ -15,7 +15,13 @@ const Title = styled.h1 `
 function App() {
   const [filters, setFilters] = useState({});
   const [data, setData] = useState({ items: [] });
-  const [showTest, setShowTest] = useState(true);
+  // const [showTest, setShowTest] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/items")
+    .then((response) => response.json())
+    .then((data) =>setData({items:data}));
+  }, []);
 
   const updateFilters = (searchParams) => {
     setFilters(searchParams);
@@ -81,7 +87,7 @@ function App() {
     <div className='row mt-3'>
     <AddItem addItem= { addItemToData } />       
     </div>
-    { showTest ? <Test destroy = {setShowTest}/> : null }
+    {/* { showTest ? <Test destroy = {setShowTest}/> : null } */}
     </div>  
   );
 }
