@@ -5,6 +5,7 @@ import SearchBar from './searchBar';
 import AddItem from './addItem';
 import ItemsDisplay from './itemDisplay';
 import styled from "styled-components";
+import Test from './Class';
 
 const Title = styled.h1 `
   color: ${props => props.color ? props.color : 'black'};
@@ -21,8 +22,8 @@ function App() {
 
   const addItemToData = (item) => {
     let items = data['items'];
-    // item.id = items.length+1;
-    
+  
+  
     const requestOptions = {
       method: "POST",
       headers: {
@@ -34,10 +35,7 @@ function App() {
     .then((response) => response.json())
     .then((data) => { items.push(data);
       setData({items: items}); });
-    
-    // items.push(item);
-    // setData({items: items});
-    // console.log(data); 
+     
   }
 
   const filterData = (data) => {
@@ -72,7 +70,7 @@ function App() {
 
   return (
     <div className="container">
-      <Title color='green'>Testing paragraph</Title>
+      <Title color='green'>Items storage</Title>
     <div className='row mt-3'>
     <ItemsDisplay items= { filterData(data["items"]) } />
     </div>
@@ -82,6 +80,7 @@ function App() {
     <div className='row mt-3'>
     <AddItem addItem= { addItemToData } />       
     </div>
+    <Test/>
     </div>  
   );
 }
