@@ -101,7 +101,7 @@ function App() {
     <SearchBar updateSearchParams = { updateFilters } />   
     </div>
     <div className='row mt-3'>
-    <AddItem addItem= { addItemToData } />       
+    <AddItem addItem= { addItemToData } forName= "Your item's name" forType= "What kind of item it is" forBrand="Title your item"/>       
     </div>
     {/* { showTest ? <Test destroy = {setShowTest}/> : null } */}
     </div>  
