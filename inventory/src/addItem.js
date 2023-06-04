@@ -28,12 +28,15 @@ function AddItem(props) {
             <label htmlFor="name-field">Name: </label>
             <input id="name-field" type="text" value={name} placeholder={props.forName} className='form-control'
                    onChange={(e) => setName(e.target.value)} />
+
             <label htmlFor="price-field">Price: </label>
             <input id="price-field" type="number" value={price} className='form-control'
                    onChange={(e) => setPrice(e.target.value)}/>
+
             <label htmlFor="type-field">Type: </label>
             <input id="type-field" type="text" value={type} placeholder={props.forType} className='form-control'
                    onChange={(e) => setType(e.target.value)} />
+                   
             <label htmlFor="brand-field">Brand: </label>
             <input id="brand-field" type="text" value={brand} placeholder={props.forBrand} className='form-control'
                    onChange={(e) => setBrand(e.target.value)} />

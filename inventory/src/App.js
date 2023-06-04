@@ -1,11 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-// import './App.css';
 import SearchBar from './searchBar';
 import AddItem from './addItem';
 import ItemsDisplay from './itemDisplay';
 import styled from "styled-components";
-// import Test from './Class';
+
 
 const Title = styled.h1 `
   color: ${props => props.color ? props.color : 'black'};
@@ -15,7 +14,6 @@ const Title = styled.h1 `
 function App() {
   const [filters, setFilters] = useState({});
   const [data, setData] = useState({ items: [] });
-  // const [showTest, setShowTest] = useState(true);
 
   useEffect(() => {
     fetch("http://localhost:3000/items")
@@ -92,18 +90,33 @@ function App() {
 
   return (
     <div className="container">
-      <Title color='green'>Items storage</Title>
+
+      {/* Section title */}
+      <div className='row'>
+        <div className='col-4'></div>
+      <Title color='darkblue' className='col-4'>Items storage</Title>
+      </div>
+      {/* End section title */}
+
+      {/* Section display */}
     <div className='row mt-3'>
     <ItemsDisplay deleteItem= {deleteItem} 
                   items= { filterData(data["items"]) } />
     </div>
+     {/* End section display */}
+
+     {/* Section search */}
     <div className='row mt-3'>
     <SearchBar updateSearchParams = { updateFilters } />   
     </div>
+     {/* End section search */}
+
+     {/* Section add items */}
     <div className='row mt-3'>
     <AddItem addItem= { addItemToData } forName= "Your item's name" forType= "What kind of item it is" forBrand="Title your item"/>       
     </div>
-    {/* { showTest ? <Test destroy = {setShowTest}/> : null } */}
+    {/* End section add item */}
+    
     </div>  
   );
 }

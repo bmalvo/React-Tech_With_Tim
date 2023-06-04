@@ -11,7 +11,7 @@ function ItemsDisplay({items, deleteItem}) {
             <td>{item.type}</td>
             <td>{item.brand}</td>
             <td><button className='btn btn-danger' 
-                        onClick={() => deleteItem(item)}>Delete</button></td>
+                        onClick={() => deleteItem(item)}>Remove</button></td>
       </tr>
     );
     };

@@ -25,7 +25,8 @@ function SearchBar(props) {
                 <div className='col'>
             <label htmlFor="name-field">Name: </label>
             <input id="name-field" type="text" value={name} className='form-control' 
-                   onChange={(e) => setName(e.target.value)} />
+                   onChange={(e) => setName(e.target.value)}
+                   placeholder='Spell name You want to find out'/>
                 </div>
                 <div className='col'>
             <label htmlFor="price-field">Max Price: </label>
@@ -35,12 +36,14 @@ function SearchBar(props) {
                 <div className='col'>
             <label htmlFor="type-field">Type: </label>
             <input id="type-field" type="text" value={type} className='form-control'
-                   onChange={(e) => setType(e.target.value)} />
+                   onChange={(e) => setType(e.target.value)}
+                   placeholder='What type are You interested in?'/>
                 </div>
                 <div className='col'>
             <label htmlFor="brand-field">Brand: </label>
             <input id="brand-field" type="text" value={brand} className='form-control'
-                   onChange={(e) => setBrand(e.target.value)} />
+                   onChange={(e) => setBrand(e.target.value)} 
+                   placeholder='What brand are You looking for?'/>
                 </div>
             </div>
             <div className='row mt-2'>
